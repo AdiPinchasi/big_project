@@ -20,7 +20,7 @@ No installation needed — pure Python standard library.
 Project name: my_app
 Short description: A data processing pipeline
 Author name: Jane Dev
-Python version: 3.11
+  Python version detected: 3.12
 Where to create it [~/projects]: /home/user/dev
 Add GitHub Actions CI workflow? (Y/n): y
 Add pre-commit config? (Y/n): y
@@ -242,7 +242,7 @@ A set of short command aliases so you never have to remember long flags. Every c
 
 The single source of truth for project metadata and tool configuration. Replaces the older `setup.py`, `setup.cfg`, `tox.ini`, and separate config files for each tool. Contains:
 
-- **`[project]`** — name, version, description, author, Python version requirement, and the CLI entry point
+- **`[project]`** — name, version, description, author, Python version requirement (auto-detected from your system), and the CLI entry point
 - **`[tool.pytest]`** — tells pytest where to find tests and enables coverage reporting by default
 - **`[tool.black]`** — sets line length and target Python version for the formatter
 - **`[tool.mypy]`** — enables strict type checking
@@ -386,11 +386,7 @@ The front page of your project — the first thing anyone reads when they open y
 Project name: data_pipeline
 Short description [A Python project]: A real-time data processing pipeline
 Author name [Your Name]: Jane Dev
-  Python version
-    1. 3.10
-    2. 3.11 (default)
-    3. 3.12
-  Choice [1-3]:
+  Python version detected: 3.12
 Where to create it [~/projects]:
 
 ════════════════════════════════════════════
@@ -466,7 +462,7 @@ Initialise a git repository? (Y/n): y
 - **Project name** — spaces are automatically converted to underscores
 - **Existing directory** — if the target folder already exists, the script asks before overwriting
 - **GitHub Actions, pre-commit, and git init** — each is optional and asked separately
-- **Python version** — used in `pyproject.toml`, `Dockerfile`, and `ci.yml` so all three are always in sync
+- **Python version** — automatically detected from the Python running the script; stamped into `pyproject.toml`, `Dockerfile`, and `ci.yml` so all three are always in sync. No menu, no prompt.
 - **Two-stage Dockerfile** — the final image contains no build tools, keeping it small and reducing the attack surface
 - **Works on Windows, macOS, and Linux** — activation command for the venv is adjusted automatically per platform
 

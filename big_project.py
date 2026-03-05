@@ -733,11 +733,8 @@ def main():
     project_name = ask("Project name").strip().replace(" ", "_")
     description  = ask("Short description", default="A Python project")
     author       = ask("Author name", default="Your Name")
-    python_ver   = ask_choice(
-        "Python version",
-        ["3.10", "3.11", "3.12"],
-        default="3.11"
-    )
+    python_ver = f"{sys.version_info.major}.{sys.version_info.minor}"
+    print(f"  Python version detected: {python_ver}")
 
     default_location = str(Path.home() / "projects")
     project_location = Path(
